@@ -1,12 +1,40 @@
-<project xmlns="http://apache.org" 
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://apache.org"
          xmlns:xsi="http://w3.org"
          xsi:schemaLocation="http://apache.org http://apache.org">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.analytics</groupId>
-    <artifactId>student-performance</artifactId>
+
+    <groupId>com.example</groupId>
+    <artifactId>mavenproject</artifactId>
     <version>1.0-SNAPSHOT</version>
+
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
+
+    <dependencies>
+        <!-- Unit Testing Dependency for Jenkins Test Stage -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <!-- Plugin to run the application from terminal -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>com.example.PerformanceAnalytics</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
